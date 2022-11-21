@@ -21,7 +21,7 @@ export const ProductList = () => {
     const [addItems, setAddedItems] = useState([])
     const [queryId, setQueryId] = useState(1)
 
-    const { tg, queryId } = useTelegram()
+    const { tg } = useTelegram()
 
     const onAdd = (product) => {
         const alreadyAdded = addItems.find(item => item.id === product.id)

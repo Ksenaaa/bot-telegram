@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const tg = window.Telegram.WebApp;
 
 export const useTelegram = () => {    
