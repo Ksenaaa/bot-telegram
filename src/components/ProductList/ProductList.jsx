@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+
 import { useTelegram } from '../../hooks/useTelegram'
-import { getTotalPrice } from '../../utils/getTotalPrice'
 import { ProductItem } from '../ProductItem/ProductItem'
+import { getTotalPrice } from '../../utils/getTotalPrice'
 
 import './ProductList.css'
 
@@ -44,13 +45,14 @@ export const ProductList = () => {
 
     return (
         <div className={"list"}>
-            {products.map(product => {
-                <ProductItem 
-                    product={product}
+            {products.map(item =>
+                <ProductItem
+                    key={item.id}
+                    product={item}
                     onAdd={onAdd}
                     className={'item'}
                 />
-            })}
+            )}
         </div>
     )
 }
