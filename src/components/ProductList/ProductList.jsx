@@ -49,7 +49,7 @@ export const ProductList = () => {
             totalPrices: getTotalPrice(addItems),
             queryId,
         }
-
+        console.log(data)
         fetch('http://localhost:3002/web-data', {
             method: 'POST',
             headers: {
