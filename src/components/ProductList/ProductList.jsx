@@ -50,7 +50,7 @@ export const ProductList = () => {
             queryId
         }
 
-        fetch('http://localhost:3002/web-data', {
+        fetch('bot-telegram-server.vercel.app:3002/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
