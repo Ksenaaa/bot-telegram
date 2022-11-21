@@ -1,6 +1,8 @@
+import { useState } from "react";
+
 const tg = window.Telegram.WebApp;
 
-export const useTelegram = () => {
+export const useTelegram = () => {    
     const onClose = () => {
         tg.close()
     }
@@ -18,6 +20,5 @@ export const useTelegram = () => {
         onToggleButton,
         tg, 
         user: tg.initDataUnsafe?.user,
-        queryId: tg.initDataUnsafe?.query_id,
     }
 }

@@ -19,6 +19,8 @@ const products = [
 
 export const ProductList = () => {
     const [addItems, setAddedItems] = useState([])
+    const [queryId, setQueryId] = useState(1)
+
     const { tg, queryId } = useTelegram()
 
     const onAdd = (product) => {
@@ -49,8 +51,7 @@ export const ProductList = () => {
             totalPrices: getTotalPrice(addItems),
             queryId,
         }
-        console.log('data', data)
-        console.log('tg', tg)
+
         fetch('http://localhost:3002/web-data', {
             method: 'POST',
             headers: {
@@ -58,6 +59,7 @@ export const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
+        setQueryId(preState => preState += 1)
     }, [addItems])
 
     useEffect(() => {
