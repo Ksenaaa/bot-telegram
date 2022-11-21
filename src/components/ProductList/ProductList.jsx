@@ -50,7 +50,7 @@ export const ProductList = () => {
             queryId,
         }
         console.log('data', data)
-        console.log('tg', tg.initDataUnsafe)
+        console.log('tg', tg)
         fetch('http://localhost:3002/web-data', {
             method: 'POST',
             headers: {
