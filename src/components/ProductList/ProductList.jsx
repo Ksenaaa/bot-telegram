@@ -19,9 +19,8 @@ const products = [
 
 export const ProductList = () => {
     const [addItems, setAddedItems] = useState([])
-    const [queryId, setQueryId] = useState(1)
 
-    const { tg } = useTelegram()
+    const { tg, queryId } = useTelegram()
 
     const onAdd = (product) => {
         const alreadyAdded = addItems.find(item => item.id === product.id)
@@ -52,14 +51,13 @@ export const ProductList = () => {
             queryId,
         }
 
-        fetch('http://bot-telegram-server.vercel.app/web-data', {
+        fetch('http://localhost:3002/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-        setQueryId(preState => preState += 1)
         setAddedItems([])
 
     }, [addItems])
