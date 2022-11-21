@@ -60,6 +60,9 @@ export const ProductList = () => {
             body: JSON.stringify(data)
         })
         setQueryId(preState => preState += 1)
+        setAddedItems([])
+        tg.MainButton.hide()
+
     }, [addItems])
 
     useEffect(() => {
