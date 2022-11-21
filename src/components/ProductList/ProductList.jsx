@@ -61,7 +61,6 @@ export const ProductList = () => {
         })
         setQueryId(preState => preState += 1)
         setAddedItems([])
-        tg.MainButton.hide()
 
     }, [addItems])
 
