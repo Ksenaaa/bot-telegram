@@ -12,7 +12,8 @@ export const useTelegram = () => {
             tg.MainButton.show()
         }
     }
-
+    console.log(tg.initDataUnsafe)
+    console.log(tg.initDataUnsafe?.query_id)
     return {
         onClose,
         onToggleButton,
