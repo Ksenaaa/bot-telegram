@@ -47,10 +47,10 @@ export const ProductList = () => {
         const data = {
             products: addItems,
             totalPrices: getTotalPrice(addItems),
-            queryId
+            queryId,
         }
 
-        fetch('bot-telegram-server.vercel.app:3002/web-data', {
+        fetch('http://localhost:3002/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,6 +76,7 @@ export const ProductList = () => {
                     className={'item'}
                 />
             )}
+            <button onClick={onSendData}>d</button>
         </div>
     )
 }
